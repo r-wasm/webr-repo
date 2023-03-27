@@ -127,7 +127,7 @@ for (pkg in packages) {
     download.file(new_url, tarball_path)
   }
 
-  if (!pkg %in% host_packages || packageVersion(pkg) != new_ver_string) {
+  if (!pkg %in% host_packages || packageVersion(pkg) < new_ver_string) {
     install.packages(pkg)
   }
 
