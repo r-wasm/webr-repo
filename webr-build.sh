@@ -38,7 +38,7 @@ mv lib/* ${ROOT}/lib
 BIN="${ORIG}/repo/bin/emscripten/contrib/${R_VERSION}/"
 
 mkdir -p $BIN
-mv *.tgz $BIN
+mv *.tar.gz $BIN
 
 cd ${ORIG}
 rm -rf ${TMP}
