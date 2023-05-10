@@ -125,7 +125,7 @@ for (pkg in packages) {
   } else {
     tarball_file <- tarball(pkg, new_ver_string)
     tarball_path <- file.path(webr_contrib_src, tarball_file)
-    new_url <- paste0(cran_url, "src/contrib/", tarball_file)
+    new_url <- paste0(cran_url, "/src/contrib/", tarball_file)
     download.file(new_url, tarball_path)
   }
 
