@@ -25,6 +25,7 @@ if (file.exists("repo/src/contrib/PACKAGES")) {
 }
 
 cran_url <- getOption("repos")[["CRAN"]]
+cran_url <- gsub("/$", "", cran_url)
 webr_contrib_src <- file.path("repo", "src", "contrib")
 webr_contrib_bin <- file.path("repo", "bin", "emscripten", "contrib", r_version)
 
