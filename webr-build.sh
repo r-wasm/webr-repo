@@ -38,7 +38,8 @@ mv lib/* ${ROOT}/lib
 BIN="${ORIG}/repo/bin/emscripten/contrib/${R_VERSION}/"
 
 mkdir -p $BIN
-mv *.tar.gz $BIN
+find . -name '*.tgz' -exec mv {} $BIN \;
+find . -name '*.tar.gz' -exec sh -c 'f="{}"; mv -- "$f" "$BIN${f%.tar.gz}.tgz"' \;
 
 cd ${ORIG}
 rm -rf ${TMP}
