@@ -39,7 +39,8 @@ BIN="${ORIG}/repo/bin/emscripten/contrib/${R_VERSION}/"
 
 mkdir -p $BIN
 find . -name '*.tgz' -exec mv {} $BIN \;
-find . -name '*.tar.gz' -exec sh -c 'f="{}"; mv -- "$f" "$BIN${f%.tar.gz}.tgz"' \;
+find . -name '*.tar.gz' -exec sh -c \
+  'f="{}"; v="${f#*_}"; mv -- "$f" "'${BIN}'${f%%_*}_${v%%_*}.tgz"' \;
 
 cd ${ORIG}
 rm -rf ${TMP}
